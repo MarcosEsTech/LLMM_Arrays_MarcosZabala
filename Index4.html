@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		function longestWord(words){
+
+				var namesLength = new Array();
+
+				for(i=0;i<words.length;i++){
+					namesLength[i]=words[i].length;
+				}
+
+				var maxN =Number(Math.max.apply(Math,namesLength));
+				var positionN = parseInt(namesLength.indexOf(maxN));
+				document.write("<br>"+"<br>"+words[positionN]);
+		}
+
+		function table(booleans){
+
+			var result1;
+			var result2;
+
+			for(i=0;i<booleans.length-1;i++){
+				result1=booleans[i] && booleans[i+1];
+				result2=booleans[i] || booleans[i+1];
+			}
+
+			document.write(result1);
+			document.write("<br>"+ result2);
+		}
+
+		function calculator(numbers){
+
+			var suma = 0;
+			for(var i=0; i<numbers.length; i++){
+				suma=suma+numbers[i]
+			}
+			document.write("<br>"+"<br>"+suma);
+			var resta =0;
+			for(var i=0; i<numbers.length; i++){
+				if (resta==0){
+					resta=numbers[i];
+				}else{
+					resta=resta-numbers[i]
+				}
+			}
+			document.write("<br>"+resta);
+			var multiplica=0;
+			for(var i=0; i<numbers.length; i++){
+				if (multiplica==0){
+					multiplica=numbers[i];
+				}else{
+					multiplica=multiplica*numbers[i];
+				}			
+			}
+			document.write("<br>"+multiplica);
+			var divide = 0;
+			for(var i=0; i<numbers.length; i++){
+				if (divide==0){
+					divide=numbers[i];
+				}else{
+					divide=divide/numbers[i];
+				}
+			}
+			document.write("<br>"+divide);
+			var resto = 0;
+			for(var i=0; i<numbers.length; i++){
+				if (resto==0){
+					resto=numbers[i];
+				}else{
+					resto=resto%numbers[i];
+				}
+			}
+			document.write("<br>"+resto);
+
+		}
+
+		var values = [true, 5, false, "hola", "adios", 2];
+		var typeValue;
+		var booleans= new Array();
+		var numbers= new Array();
+		var words= new Array();
+		var x=0;
+		var y=0;
+		var z=0;
+		for(i=0;i<values.length;i++){
+			typeValue = typeof values[i];
+			if(typeValue=="boolean"){
+				booleans[x]=values[i];
+				x++;
+			}
+			if(typeValue=="number"){
+				numbers[y]=values[i];
+				y++;
+			}
+			if(typeValue=="string"){
+				words[z]=values[i];
+				z++;
+			}
+		}
+		table(booleans);
+		calculator(numbers);
+		longestWord(words);
+
+	</script>
+	
+</body>
+</html>

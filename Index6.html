@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 6</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		function randomDice () {
+			do{
+				var x=Math.round(Math.random()*6.49);
+			}while(x<1);
+			return x;
+		}
+
+		function mostRepeat (values){
+
+		}
+
+		function lessRepeat(values){
+
+		}
+
+		function highestNumber (values){
+			document.write("<br>El mayor número es: "+Math.max.apply(Math,values));
+		}
+
+		function lowestNumber (values){
+			document.write("<br>El menor número es: "+Math.min.apply(Math,values));
+		}
+
+		var values = new Array(100);
+		var dice1;
+		var dice2;
+		for(i=0;i<100;i++){
+			dice1=randomDice();
+			dice2=randomDice();
+			values[i]=dice1+dice2;
+		}
+
+
+		mostRepeat(values);
+		lessRepeat(values);
+		lowestNumber(values);
+		highestNumber(values);
+
+	</script>
+	
+</body>
+</html>
